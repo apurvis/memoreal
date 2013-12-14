@@ -1,5 +1,7 @@
 %p
-  %strong i remember
+  %string i read about
+  = @memory.previous_memory.try(:description)
+  %strong now i remember
   = @memory.description
 
 %p
