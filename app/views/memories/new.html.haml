@@ -1,10 +1,10 @@
 %p
-  i remembered
+  %strong i remembered
   = @previous_memory.description
 
 = form_for(:memory, :url => memories_path) do |f|
   %p
-    = f.label "i remember"
+    = f.label "... and now i remember"
     = f.text_field :description
     = f.hidden_field :previous_memory_id, value: @previous_memory.id
   %p
