@@ -6,5 +6,6 @@
   %p
     = f.label "i remember"
     = f.text_field :description
+    = f.hidden_field :previous_memory_id, value: @previous_memory.id
   %p
     = f.submit "submit"

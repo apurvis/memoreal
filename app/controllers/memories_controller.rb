@@ -1,8 +1,9 @@
 class MemoriesController < ApplicationController
   def new
+    puts "index params #{params}"
     if params[:previous_memory_id]
       puts "had a previous memory"
-      @previous_memory = params[:previous_memory_id]
+      @previous_memory = Memory.find(params[:previous_memory_id])
     else
       puts "random memory"
       if Memory.count == 0
@@ -14,12 +15,12 @@ class MemoriesController < ApplicationController
   end
 
   def create
-    puts "params: #{params}"
+    puts "create params: #{params}"
     @memory = Memory.new(params[:memory])
-    @memory.previous_memory_id = params[:previous_memory_id]
+#    @memory.previous_memory_id = params[:previous_memory_id]
     @memory.save
 
-    redirect_to @memory
+    redirect_to new_memory_path(previous_memory_id: @memory.id)
   end
 
   def show
