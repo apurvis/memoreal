@@ -4,6 +4,7 @@ development:
   encoding: utf8
   database: memoreal_development
   pool: 5
+  password:
 
 production:
   adapter: postgresql
