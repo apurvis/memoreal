@@ -1,3 +1,7 @@
+%p
+  i remembered
+  = @previous_memory.description
+
 = form_for(:memory, :url => memories_path) do |f|
   %p
     = f.label "i remember"
