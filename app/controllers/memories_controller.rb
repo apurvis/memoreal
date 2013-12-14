@@ -1,11 +1,8 @@
 class MemoriesController < ApplicationController
   def new
-    puts "index params #{params}"
     if params[:previous_memory_id]
-      puts "had a previous memory"
       @previous_memory = Memory.find(params[:previous_memory_id])
     else
-      puts "random memory"
       if Memory.count == 0
         @previous_memory = Memory.create(description: "The first memory")
       else
@@ -15,7 +12,6 @@ class MemoriesController < ApplicationController
   end
 
   def create
-    puts "create params: #{params}"
     @memory = Memory.new(post_params)
     @memory.save
 

@@ -1,5 +1,13 @@
 development:
-    adapter: postgresql
-    host: localhost
-    encoding: utf8
-    database: memoreal_development
+  adapter: postgresql
+  host: localhost
+  encoding: utf8
+  database: memoreal_development
+  pool: 5
+
+production:
+  adapter: postgresql
+  encoding: utf8
+  database: memoreal
+  pool: 5
+  password:
