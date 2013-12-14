@@ -16,7 +16,7 @@ class MemoriesController < ApplicationController
 
   def create
     puts "create params: #{params}"
-    @memory = Memory.new(params[:memory])
+    @memory = Memory.new(post_params)
     @memory.save
 
     redirect_to new_memory_path(previous_memory_id: @memory.id)
