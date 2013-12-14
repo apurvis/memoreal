@@ -1,5 +1,6 @@
 class MemoriesController < ApplicationController
   def new
+    @previous_memory = Memory.limit(1).offset(rand(Memory.count)).first
   end
 
   def create
