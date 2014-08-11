@@ -2,6 +2,7 @@ Memoreal::Application.routes.draw do
   get "collector/index"
 
   resources :memories
+  resources :releases
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
